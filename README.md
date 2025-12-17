@@ -5,18 +5,12 @@
 </p>
 
 <p align="center">
-  <a href="https://client-app-with-database.vercel.app/">Live Demo</a> •
+  <a href="https://client-app-with-database.vercel.app/"> 🌐 Live Demo</a> •
   <a href="https://github.com/AnnaSzczolko/ClientAppWithDatabase">Repository</a>
 </p>
 
 
-Client App With Database
 
-Full-stack web application built with React (Vite) frontend and Node.js/Express backend — demonstrates CRUD operations and database interaction.
-
-🚀 Live demo
-
-🌐 https://client-app-with-database.vercel.app/
 
 🧠 What is this project?
 

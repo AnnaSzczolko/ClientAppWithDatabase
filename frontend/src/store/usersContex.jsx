@@ -1,5 +1,7 @@
 import { createContext, useEffect, useState } from 'react'
 
+const API_URL = "https://clientappwithdatabase.onrender.com"
+
 export const UsersContex = createContext({
 	users: null,
 	addUser: userData => {},
@@ -20,13 +22,13 @@ export function UsersContexProvider({ children }) {
 	}, [])
 
 	const getUsers = async () => {
-		const response = await fetch('http://localhost:5000/users')
+		const response = await fetch(`${API_URL}/users`)
 		const data = await response.json()
 		setUsers(data)
 	}
 
 	async function addUser(userData) {
-		const response = await fetch('http://localhost:5000/users', {
+		const response = await fetch(`${API_URL}/users`, {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify(userData),
@@ -41,7 +43,7 @@ export function UsersContexProvider({ children }) {
 	}
 
 	async function deleteUser(id) {
-		const response = await fetch(`http://localhost:5000/users/${id}`, {
+		const response = await fetch(`${API_URL}/users/${id}`, {
 			method: 'DELETE',
 		})
 
@@ -55,7 +57,7 @@ export function UsersContexProvider({ children }) {
 
 	async function changeUserData(id, userData) {
 
-		const response = await fetch(`http://localhost:5000/users/${id}`, {
+		const response = await fetch(`${API_URL}/users/${id}`, {
             method: 'PUT',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify(userData),
@@ -73,7 +75,7 @@ export function UsersContexProvider({ children }) {
 	}
 
 	async function getUserData(id) {
-		const response = await fetch(`http://localhost:5000/users/${id}`)
+		const response = await fetch(`${API_URL}/users/${id}`)
 
 		if (!response.ok) {
 			return

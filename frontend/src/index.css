@@ -181,7 +181,7 @@ legend {
 .user {
 	display: flex;
 	justify-content: space-between;
-	align-items: flex-start;
+	align-items: center;
 	gap: 1em;
 	background: var(--bg-soft);
 	padding: 1em;
@@ -208,9 +208,6 @@ legend {
 .occupation {
 	font-size: 1rem;
 	padding: 0.25rem 0.6rem;
-	border-radius: 999px;
-	border: 1px solid var(--border-color);
-	background: var(--bg-card);
 }
 
 .user-actions {

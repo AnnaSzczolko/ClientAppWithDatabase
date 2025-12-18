@@ -4,16 +4,12 @@ import { use } from 'react'
 import { UsersContex } from '../store/usersContex'
 
 export default function Form() {
-	const { addUser, changeUserData, user, resetUser} = use(UsersContex)
-
-	
+	const { addUser, changeUserData, user, resetUser } = use(UsersContex)
 
 	const resetHandler = () => {
 		formAction(null)
 		resetUser()
 	}
-
-
 
 	const singupAction = (prevFormState, formData) => {
 		if (formData === null) {
@@ -63,117 +59,125 @@ export default function Form() {
 			}
 		}
 
-		if(user.name){
-			changeUserData(user.id, {name,  surname, gender, age, occupation, terms } )
+		if (user.name) {
+			changeUserData(user.id, { name, surname, gender, age, occupation, terms })
 		} else {
-
-			addUser({name,  surname, gender, age, occupation, terms })
+			addUser({ name, surname, gender, age, occupation, terms })
 		}
 
+		resetUser()
 
-		 resetUser()
-
-		 return {errors : null}
+		return { errors: null }
 	}
 	const [formState, formAction, pending] = useActionState(singupAction, { errors: null })
 
-
 	return (
-		<form action={formAction}>
-			<h2>Welcome on board!</h2>
-			<p>Please, enter a data</p>
+		<form action={formAction} className="form">
+			<h2 className="form-title">Welcome on board!</h2>
+			<p className="form-subtitle">Please, enter a data</p>
 
-			<div className="data">
+			<div className="form-container">
 				<label htmlFor="name">Name</label>
 				<input type="text" name="name" id="name" defaultValue={user ? user.name : formState.enteredValues?.name} />
 			</div>
-			<div className="data">
+			<div className="form-container">
 				<label htmlFor="surname">Surname</label>
-				<input type="text" name="surname" id="surname" 
-				defaultValue={user ? user.surname : formState.enteredValues?.surname}
-				 />
+				<input
+					type="text"
+					name="surname"
+					id="surname"
+					defaultValue={user ? user.surname : formState.enteredValues?.surname}
+				/>
 			</div>
-			<div className="data">
+			<div className="form-container">
 				<label htmlFor="gender">Chose your gender</label>
 				<select
 					name="gender"
 					id="gender"
-					defaultValue={ user ? user.gender : formState.enteredValues?.gender}
+					defaultValue={user ? user.gender : formState.enteredValues?.gender}
 					key={formState.enteredValues?.gender}>
 					<option value="female">Female</option>
 					<option value="male">Male</option>
 				</select>
 			</div>
-			<div className="data">
+			<div className="form-container">
 				<label htmlFor="age">Enter your age</label>
-				<input type="number" name="age" id="age" step="1" min={1} defaultValue={user ? user.age:  formState.enteredValues?.age} />
+				<input
+					type="number"
+					name="age"
+					id="age"
+					step="1"
+					min={1}
+					defaultValue={user ? user.age : formState.enteredValues?.age}
+				/>
 			</div>
-			<fieldset>
+			<fieldset className="form-fieldset">
 				<legend>What are you doing?</legend>
-				<div className="data">
+				<div className="checkbox">
 					<input
 						type="checkbox"
 						id="working"
 						value="working"
 						name="occupation"
-						defaultChecked={user ? user.occupation?.includes('working') :  formState.enteredValues?.occupation.includes('working')}
+						defaultChecked={
+							user ? user.occupation?.includes('working') : formState.enteredValues?.occupation.includes('working')
+						}
 						key={user.occupation?.includes('working')}
 					/>
 					<label htmlFor="working">Working</label>
 				</div>
-				<div className="data">
+				<div className="checkbox">
 					<input
 						type="checkbox"
 						id="studying"
 						value="studying"
 						name="occupation"
-						defaultChecked={user ? user.occupation?.includes('studying') :formState.enteredValues?.occupation.includes('studying')}
+						defaultChecked={
+							user ? user.occupation?.includes('studying') : formState.enteredValues?.occupation.includes('studying')
+						}
 						key={user.occupation?.includes('studying')}
 					/>
 					<label htmlFor="studying">Studying</label>
 				</div>
-				<div className="data">
+				<div className="checkbox">
 					<input
 						type="checkbox"
 						id="other"
 						value="other"
 						name="occupation"
-						defaultChecked={  user ? user.occupation?.includes('other') : formState.enteredValues?.occupation.includes('other')}
+						defaultChecked={
+							user ? user.occupation?.includes('other') : formState.enteredValues?.occupation.includes('other')
+						}
 						key={user.occupation?.includes('other')}
 					/>
 					<label htmlFor="other">Other</label>
 				</div>
 			</fieldset>
 
-			<div className="data">
-				<label htmlFor="terms"></label>
-				<input type="checkbox" id="terms" name="terms" defaultChecked={formState.enteredValues?.terms} /> I agree to
-				terms and conditions
+			<div className="form-container terms">
+				<label htmlFor="terms">I agree to terms and conditions</label>
+				<input type="checkbox" id="terms" name="terms" defaultChecked={formState.enteredValues?.terms} />
 			</div>
 
 			{formState.errors && (
-				<ul>
+				<ul className='error-list'>
 					{formState.errors.map(err => (
 						<li key={err}>{err}</li>
 					))}
 				</ul>
 			)}
-			<p className="actions">
-				<button type="reset" onClick={resetHandler}>
+			<div className="actions">
+				<button className="button button-secondary" type="reset" onClick={resetHandler}>
 					Reset
 				</button>
-				{user.name ?
-
-				<button disabled={pending}>
-					{pending ? 'Please wait...' : 'Change user Data'}</button> :  
-				
-				
-				
-				<button disabled={pending}>{pending ? 'Please wait...' : 'Sing up'}</button>
-				
-				
-				}
-			</p>
+				{user.name ? (
+					<button disabled={pending}>{pending ? 'Please wait...' : 'Change user Data'}</button>
+				) : (
+					<button className="button button-primary" disabled={pending}>
+						{pending ? 'Please wait...' : 'Sing up'}
+					</button>
+				)}
+			</div>
 		</form>
 	)
 }

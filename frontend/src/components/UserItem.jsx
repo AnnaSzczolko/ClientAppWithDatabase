@@ -17,18 +17,24 @@ export default function UserItem({ data }) {
 
 	return (
 
-		<div>
-			<div>{data.name}</div>
-			<p>{data.surname}</p>
+		<div className='user'>
+			<div className="user-main">
+			<p>{data.name} {data.surname}</p>
+
+			</div>
+
 			<p>{data.gender}</p>
 			<p>{data.age}</p>
-			<ul>
+			<ul className='occupation-list'>
 				{data.occupation.map(occ => (
-					<li key={occ}>{occ}</li>
+					<li className='occupation' key={occ}>{occ}</li>
 				))}
 			</ul>
-      <button onClick={() => deleteUserHandler(data.id)}>Delete</button>
-      <button onClick={() => changeUserDataHandler(data.id)}>Change Data</button>
+			<div className="user-actions">
+      <button className='button button-primary' onClick={() => deleteUserHandler(data.id)}>Delete</button>
+      <button className='button button-primary' onClick={() => changeUserDataHandler(data.id)}>Change Data</button>
+
+			</div>
 		</div>
 	)
 }

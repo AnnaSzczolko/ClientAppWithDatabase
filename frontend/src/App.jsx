@@ -7,7 +7,7 @@ import Form from './components/Form'
 export default function App() {
 	return (
 		<>
-			<div>
+			<div className='app'>
 				<UsersContexProvider>
 					<Form></Form>
 					<Users></Users>

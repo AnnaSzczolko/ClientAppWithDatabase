@@ -10,9 +10,12 @@ export default function Users() {
     const { users } = use(UsersContex)
 
   return (
-    <div>
-        <h2>Users</h2>
+    <div className='users'>
+        <h2 className='users-title'>Users</h2>
+        <div className='users-list'>
+
         { users && users.map(item => <UserItem key={item.id} data={item}></UserItem>)}
+        </div>
     </div>
   )
 }

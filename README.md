@@ -1,21 +1,7 @@
 <h1 align="center">Client App With Database</h1>
 
 <p align="center">
-  Fullstack web application built with React & Node.js
-</p>
-
-<p align="center">
-  <a href="https://client-app-with-database.vercel.app/"> 🌐 Live Demo</a> •
-  <a href="https://github.com/AnnaSzczolko/ClientAppWithDatabase">Repository</a>
-</p>
-
-
-
-
-<h1 align="center">Client App With Database</h1>
-
-<p align="center">
-  Fullstack web application built with <b>React (Vite)</b> and <b>Node.js / Express</b>
+    Fullstack web application built with <b>React (Vite)</b> and <b>Node.js / Express</b>
 </p>
 
 <p align="center">
@@ -51,7 +37,7 @@ It demonstrates how a modern React frontend communicates with a backend API conn
 * React (Vite)
 * JavaScript (ES6+)
 * CSS
-* Fetch API / Axios
+* Fetch API 
 
 ### Backend
 
@@ -140,23 +126,13 @@ http://localhost:5173
 
 ---
 
-## 📸 Screenshots
-
-> *(Add screenshots of the application UI here to improve readability for recruiters)*
-
----
 
 ## 👩‍💻 About Me
 
-**Anna Szczółko**
+**Anna Szczołko**
 Aspiring Junior Frontend / Fullstack Developer
 📍 Poznań, Poland
 
 🔗 GitHub: [https://github.com/AnnaSzczolko](https://github.com/AnnaSzczolko)
 
----
-
-## 📄 Status
-
-The project is actively developed and will be extended with new features in the future.
 

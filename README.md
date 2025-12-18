@@ -12,79 +12,151 @@
 
 
 
-🧠 What is this project?
+<h1 align="center">Client App With Database</h1>
 
-This application allows users to interact with data stored in a backend database through a user interface.
-It showcases a connection between frontend and backend, API consumption, and real database integration — skills highly valued for junior frontend/fullstack roles.
+<p align="center">
+  Fullstack web application built with <b>React (Vite)</b> and <b>Node.js / Express</b>
+</p>
 
-🛠 Tech Stack
-Frontend
+<p align="center">
+  <a href="https://client-app-with-database.vercel.app/">🌐 Live Demo</a> •
+  <a href="https://github.com/AnnaSzczolko/ClientAppWithDatabase">📂 GitHub Repository</a>
+</p>
 
-✔ React (Vite)
-✔ Fetch API (for talking with backend)
-✔ CSS 
+<p align="center">
+  <img src="https://img.shields.io/badge/Frontend-React%20(Vite)-blue" />
+  <img src="https://img.shields.io/badge/Backend-Node.js%20%7C%20Express-green" />
+  <img src="https://img.shields.io/badge/Status-Active-success" />
+</p>
 
-Backend
+---
 
-✔ Node.js
-✔ Express
-✔ REST API routes
-✔ Database connection 
+## 🧠 About the project
 
-Tools
+This project is a **fullstack web application** created as part of my developer portfolio.
+It demonstrates how a modern React frontend communicates with a backend API connected to a database.
 
-✔ Git & GitHub
-✔ npm / Yarn
-✔ Vercel / Deployment platform
+**Main goals of the project:**
 
-📂 Project Structure
+* show practical fullstack skills
+* present clean project structure
+* demonstrate real data flow between frontend and backend
+
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+
+* React (Vite)
+* JavaScript (ES6+)
+* CSS
+* Fetch API / Axios
+
+### Backend
+
+* Node.js
+* Express
+* REST API
+* Database integration
+
+### Tools
+
+* Git & GitHub
+* npm
+* Vercel (deployment)
+
+---
+
+## 📂 Project Structure
+
+```
 ClientAppWithDatabase/
-├── backend/        # Node.js + Express API
-├── frontend/       # React (Vite) App
+├── frontend/    # React (Vite) application
+├── backend/     # Node.js / Express API
 ├── .gitignore
 └── README.md
+```
 
-📦 Installation & Setup
-1) Clone the repo
+---
+
+## ▶️ How to run the project locally
+
+### 1️⃣ Clone the repository
+
+```bash
 git clone https://github.com/AnnaSzczolko/ClientAppWithDatabase.git
 cd ClientAppWithDatabase
+```
 
-2) Setup backend
+### 2️⃣ Run backend
+
+```bash
 cd backend
 npm install
 npm run dev
+```
 
-🟢 Backend server typically starts at:
+Backend runs by default on:
 
+```
 http://localhost:5000
+```
 
-3) Setup frontend
+### 3️⃣ Run frontend
 
-Open new terminal:
+Open a new terminal:
 
+```bash
 cd frontend
 npm install
 npm run dev
+```
 
+Frontend runs on:
 
-🟢 Frontend runs locally:
+```
+http://localhost:5173
+```
 
-http://localhost:5173/
+---
 
+## 🚀 Features
 
-(port may vary depending on Vite config)
+* Full communication between frontend and backend
+* REST API for data operations
+* Database integration
+* Modern frontend setup with Vite
+* Clean and readable code structure
 
- 🧩 Features
+---
 
-✔ Full connection between frontend and backend
-✔ Database integration for CRUD
-✔ Modern frontend with React and Vite
-✔ Clean and modular project structure
-✔ Easy to deploy and extend
+## 📈 What I learned
 
-📈 What I learned building this
+* building and connecting REST APIs
+* handling async data flow in React
+* structuring a fullstack project
+* deploying a web application
 
-✔ structuring a fullstack project
-✔ working with REST APIs
-✔ connecting React UI with backend services
-✔ deploying a fullstack app online
+---
+
+## 📸 Screenshots
+
+> *(Add screenshots of the application UI here to improve readability for recruiters)*
+
+---
+
+## 👩‍💻 About Me
+
+**Anna Szczółko**
+Aspiring Junior Frontend / Fullstack Developer
+📍 Poznań, Poland
+
+🔗 GitHub: [https://github.com/AnnaSzczolko](https://github.com/AnnaSzczolko)
+
+---
+
+## 📄 Status
+
+The project is actively developed and will be extended with new features in the future.
+

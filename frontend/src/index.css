@@ -3,10 +3,13 @@
 	--color-surface: #ffffff;
 	--color-primary: #2563eb; /* blue-600 */
 	--color-primary-hover: #1d4ed8;
+	--tr-color-primary: #93a7c2 ;/* blue-600 */
+	--tr-color-secondary: #5e7594;
 	--color-text: #0f172a; /* slate-900 */
 	--color-muted: #64748b; /* slate-500 */
 	--color-border: #e2e8f0; /* slate-200 */
 	--radius: 12px;
+	--radius-sm: 6px;
 	--shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
 	--shadow-md: 0 8px 24px rgba(0, 0, 0, 0.25);
 }
@@ -33,7 +36,7 @@ body {
 .form {
 	margin: 0 auto;
 	max-width: 800px;
-	background: var(--bg-card);
+	background: var(--color-surface);
 	border-radius: var(--radius);
 	box-shadow: var(--shadow-md);
 	padding: 1.75rem;
@@ -48,7 +51,7 @@ body {
 .form-subtitle {
 	font-size: 1.4rem;
 	margin-bottom: 1.5em;
-	color: var(--text-muted);
+	color: var(--color-muted);
 }
 
 .form-container {
@@ -70,8 +73,8 @@ label {
 input,
 select {
 	padding: 0.6rem 0.75rem;
-	border-radius: var(--radius-sm);
-	border: 1px solid var(--border-color);
+	border-radius: var(--radius);
+	border: 1px solid var(--color-border);
 	font-size: 1rem;
 }
 
@@ -82,8 +85,8 @@ select:focus {
 }
 
 .form-fieldset {
-	border: 1px solid var(--border-color);
-	border-radius: var(--radius-sm);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius);
 	margin-bottom: 1em;
 }
 
@@ -134,8 +137,8 @@ legend {
 
 .button-secondary {
 	background: transparent;
-	border: 1px solid var(--border-color);
-	color: var(--text-main);
+	border: 1px solid var(--color-border);
+	color: var(--color-text);
 }
 
 .button-secondary:hover {
@@ -161,24 +164,24 @@ legend {
 }
 
 .users {
-	background: var(--bg-card);
-	border-radius: var(--radius-md);
+	background: var(--color-surface);
+	border-radius: var(--radius);
 	box-shadow: var(--shadow-md);
-	padding: 1.75rem;
-	margin-bottom: 2rem;
+	padding: 1.75em;
+	margin-bottom: 2em;
 }
 .users-title {
 	font-size: 1.8rem;
 	margin-bottom: 0.5em;
 }
 
-.user-list {
+/* .user-list {
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
-}
+} */
 
-.user {
+/* .user {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -189,9 +192,9 @@ legend {
 }
 .user p {
 	font-size: 1rem;
-}
+} */
 
-.user-main {
+/* .user-main {
 	margin: 0 0 0.25rem;
 	font-size: 1.1rem;
 	font-weight: bold;
@@ -222,7 +225,7 @@ legend {
 
 .user-actions .button-secondary:hover {
 	background: #fee2e2;
-}
+} */
 
 .user-table {
   width: 100%;
@@ -232,14 +235,18 @@ legend {
 
 .user-table th,
 .user-table td {
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--color-border);
   padding: 0.75rem 1rem;
   text-align: left;
 }
 
 .user-table th {
+ font-size: 1rem;
   background: var(--bg-soft);
   font-weight: 600;
+}
+.user-table td {
+ font-size: 1rem;
 }
 
 .user-table tr:nth-child(even) {

@@ -63,7 +63,7 @@ body {
 }
 
 label {
-	font-size: 0.85rem;
+	font-size: 1rem;
 	font-weight: bold;
 }
 
@@ -187,10 +187,14 @@ legend {
 	padding: 1em;
 	border-radius: var(--radius-md);
 }
+.user p {
+	font-size: 1rem;
+}
 
 .user-main {
 	margin: 0 0 0.25rem;
 	font-size: 1.1rem;
+    font-weight: bold;
 }
 
 
@@ -203,7 +207,7 @@ legend {
 }
 
 .occupation {
-	font-size: 0.75rem;
+	font-size: 1rem;
 	padding: 0.25rem 0.6rem;
 	border-radius: 999px;
 	border: 1px solid var(--border-color);

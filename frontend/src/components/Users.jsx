@@ -21,7 +21,7 @@ export default function Users() {
 						<th>Actions</th>
 					</tr>
 				</thead>
-				<tbody>{users && users.map(item => <UserItem key={item.id} data={item}></UserItem>)}</tbody>
+				<tbody>{users && users.map(user => <UserItem key={user.id} data={user}></UserItem>)}</tbody>
 			</table>
 		</div>
 	)

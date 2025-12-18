@@ -3,7 +3,7 @@
 	--color-surface: #ffffff;
 	--color-primary: #2563eb; /* blue-600 */
 	--color-primary-hover: #1d4ed8;
-	--tr-color-primary: #93a7c2 ;/* blue-600 */
+	--tr-color-primary: #dcdee1 ;/* blue-600 */
 	--tr-color-secondary: #5e7594;
 	--color-text: #0f172a; /* slate-900 */
 	--color-muted: #64748b; /* slate-500 */
@@ -242,7 +242,7 @@ legend {
 
 .user-table th {
  font-size: 1rem;
-  background: var(--bg-soft);
+  background: var(--tr-color-secondary);
   font-weight: 600;
 }
 .user-table td {

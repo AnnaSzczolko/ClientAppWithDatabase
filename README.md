@@ -80,7 +80,7 @@ cd ClientAppWithDatabase
 ```bash
 cd backend
 npm install
-npm run dev
+node index.js
 ```
 
 Backend runs by default on:

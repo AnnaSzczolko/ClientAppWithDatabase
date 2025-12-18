@@ -2,7 +2,7 @@ import React from 'react'
 import { use } from 'react'
 import { UsersContex } from '../store/usersContex'
 
-export default function UserItem({ data }) {
+export default function UserItem({ user }) {
 	const { deleteUser, changeUserData, getUserData } = use(UsersContex)
 
 	const deleteUserHandler = id => {

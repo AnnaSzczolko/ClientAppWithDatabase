@@ -4,18 +4,25 @@ import { use } from 'react'
 import { UsersContex } from '../store/usersContex'
 import UserItem from './UserItem'
 
-
 export default function Users() {
+	const { users } = use(UsersContex)
 
-    const { users } = use(UsersContex)
+	return (
+		<div className="users">
+			<h2 className="users-title">Users</h2>
 
-  return (
-    <div className='users'>
-        <h2 className='users-title'>Users</h2>
-        <div className='users-list'>
-
-        { users && users.map(item => <UserItem key={item.id} data={item}></UserItem>)}
-        </div>
-    </div>
-  )
+			<table className="user-table">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Gender</th>
+						<th>Age</th>
+						<th>Occupation</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>{users && users.map(item => <UserItem key={item.id} data={item}></UserItem>)}</tbody>
+			</table>
+		</div>
+	)
 }

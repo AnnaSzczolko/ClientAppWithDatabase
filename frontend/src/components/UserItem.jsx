@@ -13,8 +13,8 @@ export default function UserItem({ user }) {
 	}
 
 	return (
-		<>
-			<tr key={user.id}>
+		
+			<tr >
 				<td>
 					{user.name} {user.surname}
 				</td>
@@ -30,7 +30,7 @@ export default function UserItem({ user }) {
 					</button>
 				</td>
 			</tr>
-		</>
+		
 
 		// 	<div className='user'>
 		// 		<div className="user-main">

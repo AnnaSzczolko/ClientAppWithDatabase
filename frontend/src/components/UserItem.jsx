@@ -15,7 +15,7 @@ export default function UserItem({ user }) {
 	return (
 		
 			<tr >
-				<td>
+				<td className='user-name'>
 					{user.name} {user.surname}
 				</td>
 				<td>{user.gender}</td>

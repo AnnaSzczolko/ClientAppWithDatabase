@@ -25,6 +25,8 @@ export default function Form() {
 
 		let errors = []
 
+
+
 		if (!isNotEmpty(name)) {
 			errors.push('Invalid name, please enter a name again')
 		}
@@ -71,14 +73,15 @@ export default function Form() {
 	}
 	const [formState, formAction, pending] = useActionState(singupAction, { errors: null })
 
+
 	return (
 		<form action={formAction} className="form">
 			<h2 className="form-title">Welcome on board!</h2>
-			<p className="form-subtitle">Please, enter a data</p>
+			<p className="form-subtitle">Please provide your personal data so we can register you in our database.</p>
 
 			<div className="form-container">
 				<label htmlFor="name">Name</label>
-				<input type="text" name="name" id="name" defaultValue={user ? user.name : formState.enteredValues?.name} />
+				<input type="text" name="name" id="name" defaultValue={ user?.name ?? formState.enteredValues?.name } />
 			</div>
 			<div className="form-container">
 				<label htmlFor="surname">Surname</label>
@@ -86,7 +89,7 @@ export default function Form() {
 					type="text"
 					name="surname"
 					id="surname"
-					defaultValue={user ? user.surname : formState.enteredValues?.surname}
+					defaultValue={ user?.surname ?? formState.enteredValues?.surname}
 				/>
 			</div>
 			<div className="form-container">
@@ -94,7 +97,7 @@ export default function Form() {
 				<select
 					name="gender"
 					id="gender"
-					defaultValue={user ? user.gender : formState.enteredValues?.gender}
+					defaultValue={user?.gender ?? formState.enteredValues?.gender}
 					key={formState.enteredValues?.gender}>
 					<option value="female">Female</option>
 					<option value="male">Male</option>
@@ -108,21 +111,21 @@ export default function Form() {
 					id="age"
 					step="1"
 					min={1}
-					defaultValue={user ? user.age : formState.enteredValues?.age}
+					defaultValue={ user?.age ?? formState.enteredValues?.age}
 				/>
 			</div>
 			<fieldset className="form-fieldset">
 				<legend>What are you doing?</legend>
 				<div className="checkbox">
-					<input
+					<input className='checkbox-item'
 						type="checkbox"
 						id="working"
 						value="working"
 						name="occupation"
 						defaultChecked={
-							user ? user.occupation?.includes('working') : formState.enteredValues?.occupation.includes('working')
+							user.occupation?.includes('working') ?? formState.enteredValues?.occupation.includes('working')
 						}
-						key={user.occupation?.includes('working')}
+						key={user.occupation?.includes('working') & formState.enteredValues?.occupation.includes('working')}
 					/>
 					<label htmlFor="working">Working</label>
 				</div>
@@ -133,9 +136,9 @@ export default function Form() {
 						value="studying"
 						name="occupation"
 						defaultChecked={
-							user ? user.occupation?.includes('studying') : formState.enteredValues?.occupation.includes('studying')
+							user.occupation?.includes('studying') ?? formState.enteredValues?.occupation.includes('studying')
 						}
-						key={user.occupation?.includes('studying')}
+						key={user.occupation?.includes('studying') & formState.enteredValues?.occupation.includes('studying')}
 					/>
 					<label htmlFor="studying">Studying</label>
 				</div>
@@ -146,9 +149,9 @@ export default function Form() {
 						value="other"
 						name="occupation"
 						defaultChecked={
-							user ? user.occupation?.includes('other') : formState.enteredValues?.occupation.includes('other')
+							 user.occupation?.includes('other') ?? formState.enteredValues?.occupation.includes('other')
 						}
-						key={user.occupation?.includes('other')}
+						key={user.occupation?.includes('other') & formState.enteredValues?.occupation.includes('other')}
 					/>
 					<label htmlFor="other">Other</label>
 				</div>
@@ -160,7 +163,7 @@ export default function Form() {
 			</div>
 
 			{formState.errors && (
-				<ul className='error-list'>
+				<ul className="error-list">
 					{formState.errors.map(err => (
 						<li key={err}>{err}</li>
 					))}
@@ -171,7 +174,7 @@ export default function Form() {
 					Reset
 				</button>
 				{user.name ? (
-					<button disabled={pending}>{pending ? 'Please wait...' : 'Change user Data'}</button>
+					<button className="button button-primary" disabled={pending}>{pending ? 'Please wait...' : 'Change user Data'}</button>
 				) : (
 					<button className="button button-primary" disabled={pending}>
 						{pending ? 'Please wait...' : 'Sing up'}

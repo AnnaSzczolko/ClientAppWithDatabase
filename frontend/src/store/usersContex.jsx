@@ -1,7 +1,6 @@
 import { createContext, useEffect, useState } from 'react'
 
-// const API_URL = "https://clientappwithdatabase.onrender.com"
-const API_URL = " http://localhost:5000"
+const API_URL = "https://clientappwithdatabase.onrender.com"
 
 export const UsersContex = createContext({
 	users: null,

@@ -110,8 +110,8 @@ http://localhost:5173
 ## 🚀 Features
 
 * Full communication between frontend and backend
-* REST API for data operations
-* Database integration
+* REST API for CRUD data operations
+* Backend connected to a database
 * Modern frontend setup with Vite
 * Clean and readable code structure
 
